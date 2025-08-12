@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Take input from user
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        int sum = 0;
+        int temp = Math.abs(number); // Handle negative numbers too
+
+        // Loop to extract and sum digits
+        while (temp > 0) {
+            sum += temp % 10; // Add last digit
+            temp /= 10;       // Remove last digit
+        }
+
+        System.out.println("The sum of digits of " + number + " is: " + sum);
+
+        scanner.close();
+    }
+}
